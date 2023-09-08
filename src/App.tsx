@@ -1,9 +1,8 @@
-import {Suspense, useContext, useState} from 'react'
+import {Suspense} from 'react'
 import './styles/index.scss'
 import {Route, Routes, Link} from 'react-router-dom'
 import {MainPageAsync} from './pages/MainPage/MainPage.async'
 import {AboutPageAsync} from './pages/AboutPage/AboutPage.async'
-import {Theme, ThemeContext} from "./theme/ThemeContext";
 import {useTheme} from "./theme/useTheme";
 import {classNames} from "./helpers/classNames";
 
