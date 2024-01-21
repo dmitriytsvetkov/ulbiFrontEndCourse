@@ -1,6 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
-    ReactNode, useCallback, useEffect, useRef, useState,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 import cls from './AppModal.module.scss';
 import { AppPortal } from '../AppPortal/AppPortal';
@@ -32,11 +36,14 @@ export const AppModal = (props: AppModalProps) => {
         }
     }, [onClose]);
 
-    const onKeyDown = useCallback((event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
+    const onKeyDown = useCallback(
+        (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                closeHandler();
+            }
+        },
+        [closeHandler],
+    );
 
     useEffect(() => {
         if (isOpen) {
