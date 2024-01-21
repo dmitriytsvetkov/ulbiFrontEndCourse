@@ -1,8 +1,8 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-import { Theme } from 'app/providers/ThemeProvider';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextTheme } from './Text';
+import { Theme } from 'app/providers/ThemeProvider';
 
 export default {
     title: 'shared/Text',
@@ -17,13 +17,13 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
     title: 'Title lorem ipsun',
-    text: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 
 export const Error = Template.bind({});
 Error.args = {
     title: 'Title lorem ipsun',
-    text: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
     theme: TextTheme.ERROR,
 };
 
@@ -34,13 +34,13 @@ onlyTitle.args = {
 
 export const onlyText = Template.bind({});
 onlyText.args = {
-    text: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     title: 'Title lorem ipsun',
-    text: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -52,6 +52,6 @@ onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const onlyTextDark = Template.bind({});
 onlyTextDark.args = {
-    text: 'Title lorem ipsun',
+    text: 'Description Description Description Description',
 };
 onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,13 +1,13 @@
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
-import { AppRouter } from 'app/providers/router';
-import { userActions } from 'entities/User';
-import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Navbar } from 'widget/Navbar';
-import { Sidebar } from 'widget/Sidebar';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { AppRouter } from 'app/providers/router';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { useDispatch } from 'react-redux';
+import { userActions } from 'entities/User';
 
-export const App = () => {
+function App() {
     const { theme } = useTheme();
     const dispatch = useDispatch();
 
@@ -26,4 +26,6 @@ export const App = () => {
             </Suspense>
         </div>
     );
-};
+}
+
+export default App;
