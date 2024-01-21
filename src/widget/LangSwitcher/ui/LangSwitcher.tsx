@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton } from 'shared/ui/AppButton';
-import { ButtomTheme } from 'shared/ui/AppButton/ui/AppButton';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface LangSwitcherProps {
     className?: string,
@@ -15,12 +14,12 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
     return (
-        <AppButton
+        <Button
             className={classNames('', {}, [className])}
-            theme={ButtomTheme.CLEAR}
+            theme={ButtonTheme.CLEAR}
             onClick={toggle}
         >
             {t(short ? 'Короткий язык' : 'Язык')}
-        </AppButton>
+        </Button>
     );
 };

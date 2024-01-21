@@ -2,13 +2,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'widget/ThemeSwitcher';
 import { LangSwitcher } from 'widget/LangSwitcher/ui/LangSwitcher';
-import { AppButton } from 'shared/ui/AppButton';
-import { ButtomTheme, ButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useTranslation } from 'react-i18next';
 import AboutIcon from 'shared/assets/icons/about.svg';
 import MainIcon from 'shared/assets/icons/main.svg';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 
 export interface SidebarProps {
@@ -29,17 +28,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
             data-testid="sidebar"
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <AppButton
+            <Button
                 data-testid="sidebar-toggle"
                 type="button"
                 onClick={onToggle}
                 className={cls.collapseBtn}
-                theme={ButtomTheme.BACKGROUND_INVERTED}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
                 square
                 size={ButtonSize.L}
             >
                 {collapsed ? '>' : '<'}
-            </AppButton>
+            </Button>
 
             <div className={cls.items}>
                 <AppLink
